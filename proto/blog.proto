@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package ="grpc/proto";
+
+package blog;
+
+message Blog{
+    string title = 1;
+    string bdoy = 2;
+}
+
+service  MainService {
+    rpc FindAll(Blog) returns (Blog);
+    rpc FindOneByTitle(Blog) returns (Blog);
+    rpc FindOneByBody(Blog) returns (Blog);
+    rpc Store(Blog) returns (Blog);
+    rpc Delete(Blog) returns (Blog);
+    rpc Update(Blog) returns (Blog);
+    rpc Search(Blog) returns (Blog);
+}
